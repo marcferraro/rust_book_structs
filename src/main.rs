@@ -6,6 +6,7 @@ struct Rectangle {
     height: u32,
 }
 
+// Can have multiple impl blocks
 impl Rectangle {
     fn area(&self) -> u32 { // &self is shorthand for self: &Self
         self.width * self.height
@@ -24,7 +25,7 @@ impl Rectangle {
         self.width > other_rect.width && self.height > other_rect.height
     }
 
-    fn square(size: u32) -> Self {
+    fn square(size: u32) -> Self { // Both self keywords are stand ins for impl type
         Self {
             width: size,
             height: size,
