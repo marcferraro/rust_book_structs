@@ -23,6 +23,13 @@ impl Rectangle {
         // Assuming we can't rotate the rectangles
         self.width > other_rect.width && self.height > other_rect.height
     }
+
+    fn square(size: u32) -> Self {
+        Self {
+            width: size,
+            height: size,
+        }
+    }
 }
 
 impl fmt::Display for Rectangle {
@@ -44,6 +51,8 @@ fn main() {
     dbg!(&rect1);
     // Able to use println! because of fmt::Dispaly implementaiton
     println!("{}", rect1);
+
+    println!("{}", Rectangle::square(6));
 
     println!(
         "The area of the rectangle is {} square pixels.",
